@@ -1,6 +1,6 @@
 # Fender Digital Data Engineering Exercise
 
-Design and implement a data pipeline that that pulls data from [Open Library.]https://openlibrary.org/dev/docs/api/books As an out put of this exercise we expect to see a minimum of the following:
+Design and implement a data pipeline that that pulls data about books and authors for a topic you are interested in using [Open Library.]https://openlibrary.org/developers/api It is suggested that you leverage the [search api]https://openlibrary.org/dev/docs/api/search to limit your results. As an output of this exercise we expect to see a minimum of the following:
 
 1. Python program that pulls data from the rest api
 2. CSV files for the following:
