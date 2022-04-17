@@ -1,6 +1,6 @@
 import sqlite3
 
-
+# Connection functions
 def db_table_authors_books(c):
     """
     Returns all data on the authors_books table
