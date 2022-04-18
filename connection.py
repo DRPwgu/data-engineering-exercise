@@ -1,5 +1,6 @@
 import sqlite3
 
+
 # Connection functions
 def db_table_authors_books(c):
     """
@@ -40,6 +41,13 @@ def db_table_books(c):
 
 
 def insert_author(c, author_data):
+    """
+    Takes a connection to a database and a tuple with the data to enter and insert the row in the DB
+    Error if the author id already exists
+    :param c:
+    :param author_data:
+    :return:
+    """
     try:
         c.execute("""INSERT INTO authors VALUES( ?,?,?,?,?,?)""", author_data)
     except sqlite3.IntegrityError as e:
@@ -47,6 +55,13 @@ def insert_author(c, author_data):
 
 
 def insert_books(c, books_data):
+    """
+    Takes a connection to a database and a tuple with the data to enter and insert the row in the DB
+    Error if the book id already exists
+    :param c:
+    :param books_data:
+    :return:
+    """
     try:
         c.execute("""INSERT INTO books VALUES( ?,?,?,?,?)""", books_data)
     except sqlite3.IntegrityError as e:
@@ -54,6 +69,13 @@ def insert_books(c, books_data):
 
 
 def insert_authors_books(c, authors_books_data):
+    """
+    Takes a connection to a database and a tuple with the data to enter and insert the row in the DB
+    Error if the combination of author and book id already exists
+    :param c:
+    :param authors_books_data:
+    :return:
+    """
     try:
         c.execute("""INSERT INTO authors_books VALUES( ?,?)""", authors_books_data)
     except sqlite3.IntegrityError as e:
