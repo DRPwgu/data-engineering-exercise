@@ -27,7 +27,7 @@ The objective of this exercise is to have you walk us through a solution you hav
 * I decided to make the three tables the exercise asked for, a table for authors, books, and the union of authors and books. 
 * The authors_books table was going to be used as a bridge due to a many-to-many relationship, an author can write many books, and a book can be written by many authors. 
 ## Here is the DDL for my table in the DB
-'''
+```
 CREATE TABLE authors (
     author_id text PRIMARY KEY,
     first_name text NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE authors (
     top_work text NOT NULL,
     work_count integer NOT NULL
     )
-'''
+```
 
 
 
