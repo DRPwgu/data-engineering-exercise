@@ -55,9 +55,12 @@ CREATE TABLE authors_books (
 * Use the combination of those keys as a primary key for the bridge table to avoid duplicates.
 * Lastly, clone the repository, open the folder in PyCharm, and get to work.
 
+### How to run the app
+* book_author_pip_line.py is the main file to run the application
 * To run the project first needs to be cloned on the local machine. The project was done using PyCharm. 
 * Open PyCharm, make a new project and use the folder you cloned as the new project's location. Run the requirements.txt file to get all dependencies.
 * If you want to make a new DB, you can manually delete the authors_books.db file and run the db.py file inside the project(this file will make a new DB empty)
+* 
 * The program is a command-line application that gives you several options.
 * You can do as many instructions as you want until you press q to quit the program.
 * The app enters authors and books one at a time. 
