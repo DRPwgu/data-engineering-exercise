@@ -65,20 +65,24 @@ def query_title(json_data):
     return result
 
 
-def query_authors_books(json_data):
+def query_authors_books(data):
     """
-    Receive json data as an argument and returns a tuple for entering data on the authors_books DB
-    :param json_data:
+    Takes a json as an argument and returns a tuple with the book_id and author_id
+    :param data:
     :return:
     """
-    author_key = json_data['docs'][0]['author_key'][0]
-    book_id = json_data['docs'][0]['key'][7:]
+    author_key = data['docs'][0]['author_key'][0]
+    book_id = data['docs'][0]['key'][7:]
 
     result = (author_key, book_id)
     return result
 
 
 def options():
+    """
+    Test interface with pipeline options
+    :return:
+    """
     print('\nThis is a Pipeline application to enter data in the authors books DB')
     print('Please read all the choices before making a selection')
     print('1 - Enter data in the Authors table')
@@ -89,3 +93,11 @@ def options():
     print('6 - Save the data in the Authors table as a CSV file')
     print('7 - Save the data in the Books table as a CSV file')
     print('8 - Save the data in the Authors_Books table as a CSV file\n')
+
+
+query = ("""
+         SELECT a.author_id , b.book_id , b.title, a.first_name, a.last_name
+        FROM authors as a
+        JOIN authors_books ON a.author_id = authors_books.author_id
+        JOIN books as b ON b.book_id = authors_books.book_id
+        """)
