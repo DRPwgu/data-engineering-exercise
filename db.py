@@ -11,7 +11,7 @@ import sqlite3
 conn = sqlite3.connect('author_books.db')
 c = conn.cursor()
 
-c.execute("""CREATE TABLE authors (
+c.execute("""CREATE TABLE IF NOT EXISTS authors (
         author_id text PRIMARY KEY,
         first_name text NOT NULL,
         last_name text NOT NULL,
@@ -20,7 +20,7 @@ c.execute("""CREATE TABLE authors (
         work_count integer NOT NULL
         )""")
 
-c.execute("""CREATE TABLE books (
+c.execute("""CREATE TABLE IF NOT EXISTS books (
         book_id text PRIMARY KEY,
         title text NOT NULL,
         author_fname text NOT NULL,
@@ -28,7 +28,7 @@ c.execute("""CREATE TABLE books (
         first_publish_year text NOT NULL
         )""")
 
-c.execute("""CREATE TABLE authors_books (
+c.execute("""CREATE TABLE IF NOT EXISTS authors_books (
         author_id text NOT NULL,
         book_id text NOT NULL,
         PRIMARY KEY (author_id, book_id),
