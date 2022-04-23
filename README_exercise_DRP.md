@@ -28,7 +28,7 @@ The objective of this exercise is to have you walk us through a solution you hav
 * The authors_books table was going to be used as a bridge due to a many-to-many relationship, an author can write many books, and a book can be written by many authors. 
 ## Here is the DDL for my table in the DB
 ```
-CREATE TABLE authors (
+CREATE TABLE IF NOT EXISTS authors (
     author_id text PRIMARY KEY,
     first_name text NOT NULL,
     last_name text NOT NULL,
@@ -36,14 +36,14 @@ CREATE TABLE authors (
     top_work text NOT NULL,
     work_count integer NOT NULL
     )
-CREATE TABLE books (
+CREATE TABLE IF NOT EXISTS books (
     book_id text PRIMARY KEY,
     title text NOT NULL,
     author_fname text NOT NULL,
     author_lname text NOT NULL,
     first_publish_year text NOT NULL
     )
-CREATE TABLE authors_books (
+CREATE TABLE IF NOT EXISTS authors_books (
     author_id text NOT NULL,
     book_id text NOT NULL,
     PRIMARY KEY (author_id, book_id),
